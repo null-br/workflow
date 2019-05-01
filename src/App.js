@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ReactSelect from './components/ReactSelect';
 import * as DatePicker from './components/DatePicker';
+import ReactReduxForm from './components/ReactReduxForm';
 import './style.css';
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <Router>
           <ul>
             <li>
@@ -20,12 +21,13 @@ class App extends Component {
               <Link to="/select">ReactSelect</Link>
             </li>
             <li>
-              <Link to="/users/">Users</Link>
+              <Link to="/react-redux-form">ReactReduxForm</Link>
             </li>
           </ul>
 
           <Route path="/" exact component={DatePicker.DatePickerDay }/>
           <Route path="/select" component={ReactSelect }/>
+          <Route path="/react-redux-form" component={ReactReduxForm }/>
         </Router>
       </div>
       // <div>
